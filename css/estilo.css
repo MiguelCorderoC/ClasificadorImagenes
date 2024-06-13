@@ -1,7 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
-
 }
 
 header {
@@ -17,4 +16,71 @@ header span {
 header article img {
     height: 30px;
     width: 30px;
+}
+
+#sect-rostros {
+    align-items: center;
+    display: flex;
+    margin-top: 10px;
+}
+
+#sect-rostros article img {
+    border-radius: 100px;
+    margin-right: 10px;
+    width: 70px;
+}
+
+.nombre {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+main {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+#sect-resultados {
+    display: flex;
+    align-items: center;
+}
+
+#sect-resultados article img {
+    width: 200px;
+}
+
+.letra-mediana {
+    font-size: 1.6em;
+}
+
+#sect-camara {
+    text-align: center;
+}
+
+#sect-camara button {
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    height: 40px;
+    width: 50%;
+}
+
+#sect-camara video {
+    border: 1px solid green;
+    margin: 10px 0 10px 0;
+}
+
+.bg-azul {
+    background-color: #124076;
+}
+
+.bg-verde {
+    background-color: #7aba78;
+}
+
+footer {
+    margin-top: 60px;
 }
