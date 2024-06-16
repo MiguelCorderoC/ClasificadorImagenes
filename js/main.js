@@ -1,22 +1,19 @@
-// Declaraciones iniciales
 const image_size = 150;
 const video = document.getElementById("video");
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 let currentStream = null;
-let facingMode = "user"; // user: front camera, environment: back camera
+let facingMode = "user";
 let modelo = null;
 
 const classNames = ["Cristiano Ronaldo", "Erling Haaland", "Kylian Mbappe"];
 
-// Carga del modelo
 (async () => {
     console.log("Cargando modelo...");
     modelo = await tf.loadLayersModel("model_js/model.json");
     console.log("Modelo cargado");
 })();
 
-// Mostrar la cámara
 window.onload = function () {
     mostrarCamara();
 }
@@ -36,6 +33,7 @@ function mostrarCamara() {
             .then(function (stream) {
                 currentStream = stream;
                 video.srcObject = currentStream;
+                video.play();
             })
             .catch(function (err) {
                 alert("No se pudo utilizar la cámara :(");
@@ -67,10 +65,8 @@ function predecir() {
         const predicted_class_index = resultado.indexOf(Math.max(...resultado));
         const predicted_class_name = classNames[predicted_class_index];
 
-        // Actualiza el texto de la tarjeta con el resultado de la predicción
         document.getElementById("card-text").innerHTML = predicted_class_name;
 
-        // Actualiza la imagen de la tarjeta
         const cardImage = document.getElementById("card-image");
         cardImage.src = canvas.toDataURL();
     }
